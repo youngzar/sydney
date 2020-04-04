@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Food type:</strong>
+  <%= @sushi_menu.food_type %>
+</p>
+
+<p>
+  <strong>Has order:</strong>
+  <%= @sushi_menu.has_order %>
+</p>
+
+<p>
+  <strong>Menus:</strong>
+  <%= @sushi_menu.menus %>
+</p>
+
+<%= link_to 'Edit', edit_sushi_menu_path(@sushi_menu) %> |
+<%= link_to 'Back', sushi_menus_path %>

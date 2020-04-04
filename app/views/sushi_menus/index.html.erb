@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Sushi Menus</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Food type</th>
+      <th>Has order</th>
+      <th>Menus</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sushi_menus.each do |sushi_menu| %>
+      <tr>
+        <td><%= sushi_menu.food_type %></td>
+        <td><%= sushi_menu.has_order %></td>
+        <td><%= sushi_menu.menus %></td>
+        <td><%= link_to 'Show', sushi_menu %></td>
+        <td><%= link_to 'Edit', edit_sushi_menu_path(sushi_menu) %></td>
+        <td><%= link_to 'Destroy', sushi_menu, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Sushi menu', new_sushi_menu_path %>

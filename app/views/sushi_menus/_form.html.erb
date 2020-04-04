@@ -1,0 +1,29 @@
+<%= form_for(@sushi_menu) do |f| %>
+  <% if @sushi_menu.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@sushi_menu.errors.count, "error") %> prohibited this sushi_menu from being saved:</h2>
+
+      <ul>
+      <% @sushi_menu.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :food_type %><br>
+    <%= f.text_field :food_type %>
+  </div>
+  <div class="field">
+    <%= f.label :has_order %><br>
+    <%= f.check_box :has_order %>
+  </div>
+  <div class="field">
+    <%= f.label :menus %><br>
+    <%= f.number_field :menus %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
